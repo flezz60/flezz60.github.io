@@ -68,7 +68,7 @@
         
         /* Fragen-Container */
         .question-container {
-            background: white;
+            background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(235,131,130,1) 0%, rgba(235,131,130,0.75) 38.6%, rgba(211,177,125,0.52) 72.1%, rgba(211,177,125,0.24) 94.7% );
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -76,12 +76,7 @@
             padding: 1em;
             border: 2px solid #ccc;
             border-radius: 2em;
-            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 
-                        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 
-                        0 12.5px 10px rgba(0, 0, 0, 0.06), 
-                        0 22.3px 17.9px rgba(0, 0, 0, 0.072), 
-                        0 41.8px 33.4px rgba(0, 0, 0, 0.086), 
-                        0 100px 80px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
         }
 
             /* Frage-Text */
@@ -100,16 +95,16 @@
                 border: 2px solid #ccc;
                 border-radius: 4px;
             }
-           
+            /*Die Buttons für den question container*/
             .scene {
                 width: 10em;
                 justify-content: center;
                 align-items: center;
             }
-            /*Die Buttons für den question container*/
+         
         .cube {
             color: mediumvioletred;
-            cursor: pointer;
+            cursor: crosshair;
             font-family: 'Roboto', sans-serif;
             transition: all 0.85s cubic-bezier(.17,.67,.14,.93);
             transform-style: preserve-3d;
@@ -196,13 +191,18 @@
         }
         /*Die Überschrift, ka wieso ich die soweit unten stehen habe*/
         h1 {
-            margin-left: auto;
-            margin-right: auto;
+            display: flex;
+            justify-content: center;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             font-size: 50px;
             background: -webkit-linear-gradient( 135deg, #FFA8A8 10%, #FCFF00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        .beschreibung {
+            display:flex;
+            justify-content:center;
+            font-size: 15px;
         }
         /*Die links in der Navi, Seite = links*/
         a {
@@ -210,24 +210,21 @@
         color: black;
         }
     </style>
-
 </head>
 <body>
+    <!--Nav-Bar-->
     <div class="card">
         <p><span><a href="https://www.youtube.com/@itazubi7731/videos" target="_blank">ITAzubi<br />YouTube</a></span></p>
         <p><span><a href="https://www.youtube.com/@Eduty/videos" target="_blank">WISO<br />Eduty<br />YouTube</a></span></p>
         <p><span><a href="" target="_blank">Vor-<br />schläge?</a></span></p>
     </div>
-
+    <!--Überschrift-->
     <h1>Prüfungsvorbereitung FISI-BFD-BW-2022-2023</h1>
     <br />
     <br />
+    <h1 class="beschreibung">Die Antworten müssen genau so eingetragen werden, wie sie in der Frage stehen!</h1>
     <br />
     <br />
-
-
-
-
     <!-- Datentypen mit Fragen.-->
     <!-- 1.-->
     <h2><span class="gradient-text">Datentypen</span></h2>
@@ -263,9 +260,6 @@
     <br />
     <br />
     <br />
-
-
-
     <!-- 2.-->
     <section>
         <picture>
@@ -299,9 +293,6 @@
     <br />
     <br />
     <br />
-
-
-
     <!-- 3.-->
     <section>
         <picture>
@@ -335,9 +326,6 @@
     <br />
     <br />
     <br />
-
-
-
     <!-- 4.-->
     <section>
         <picture>
@@ -369,10 +357,6 @@
     </section>
     <br />
     <br />
-
-
-
-
     <!-- 5.-->
     <section>
         <form class="question-container" id="question5">
@@ -406,14 +390,10 @@
     <br />
     <br />
     <br />
-
     <!--Neues Thema: Hardware--------------------------------------------------------------------------------------------------------------------------->
     <!--Mainboard-->
-
     <h2>Mainboard</h2>
-
     <!-- 6.-->
-
     <section>
         <picture>
             <img src="img/mainboard.jpg" id="datentypen" alt="geht nix" />
@@ -444,12 +424,7 @@
     </section>
     <br />
     <br />
-
-
-
-
     <!-- 7.-->
-
     <section>
         <form class="question-container" id="question7">
             <p>Frage 7:<br /><br />Welcher Anschluss auf einem Mainboard ist für den Prozessor bestimmt?</p>
@@ -476,12 +451,7 @@
     </section>
     <br />
     <br />
-
-
-
-
     <!-- 8.-->
-
     <section>
         <form class="question-container" id="question8">
             <p>Frage 8:<br /><br />Welche Art von Karten werden in PCIe-Slots angeschlossen?</p>
@@ -510,13 +480,9 @@
     <br />
     <br />
     <br />
-
     <!--Wärmeleitpaste----------------------------------------------------------------------------------------------------------------------->
-
     <h2>Wärmeleitpaste</h2>
-
     <!-- 9.-->
-
     <section>
         <picture>
             <img src="img/wärmeleit.jpg" id="datentypen" alt="geht nix" />
@@ -547,10 +513,7 @@
     </section>
     <br />
     <br />
-
     <!-- 10.-->
-
-
     <section>
         <form class="question-container" id="questio10">
             <p>Frage 10:<br /><br />Wie sollte Wärmeleitpaste angewendet werden, um die Wärmeübertragung zu optimieren?</p>
@@ -579,11 +542,8 @@
     <br />
     <br />
     <br />
-
     <!--Physische/Logische Prozessoren----------------------------------------------------->
-
     <h2>Physische/Logische Prozessoren</h2>
-
     <!-- 11.-->
     <section>
         <picture>
@@ -624,26 +584,11 @@
         <source src="vid/harddrive0.mp4" type="video/mp4">
     </video>
     <br />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
 <script>
     let score = 0;
-    //Das sind die Constanten, also das Gegenteil von Variable. Weil ändert sich nicht Weisch!!!Egal was Herr Böse sagt! Es gibt nur eine richtige Antwort, KLAR!
+//Richtige Antworten
     const correctAnswers = ["Boolean",
                             "Alle genannten Datentypen",
                             "Byte",
@@ -659,14 +604,8 @@
                             "",
                             "",
                             "",
-
-
-
-
-
-
-    ];
-    // Hier beginnt der vergleich
+                            ];
+// Hier beginnt der vergleich
     function checkAnswer(questionNumber) {
         // Antwort des Benutzers aus dem Eingabefeld abrufen
         let userAnswer = document.getElementById("answer" + questionNumber).value
@@ -690,5 +629,4 @@
     });
 
 </script>
-<!-- Wenn du Fragen ergänzen willst k̵o̵s̵t̵e̵t̵ ̵1̵0̵€̵ ̵p̵r̵o̵ ̵W̵o̵r̵t̵!̵ ̵A̵l̵s̵ ̵o̵b̵ ̵i̵c̵h̵ ̵d̵a̵s̵ ̵h̵i̵e̵r̵ ̵G̵r̵a̵t̵i̵s̵ ̵m̵a̵c̵h̵e̵ ̵t̵z̵t̵z̵t̵z̵.
-müssen die parameter angepasst und in der Form die Fragen bzw. die richtigen antworten gaaaaanz oben in die const eingetragen werden.-->
+
