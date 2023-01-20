@@ -6,6 +6,7 @@
     <title>SQL Quiz</title>
     <!-- So Style gedöns, sieht halt schöner aus mit dem Grün und so.....keine mediaquery o.ä. weil is schon responsive-->
     <style>
+        /*Navi links*/
         .card {
             top: 50%;
             width: 210px;
@@ -17,7 +18,7 @@
             padding: .4em;
             position: fixed;
         }
-
+        /*Die unterste von den ebenen*/
             .card p {
                 height: 100%;
                 flex: 1;
@@ -32,12 +33,12 @@
                 justify-content: center;
                 align-items: center;
             }
-
+            /*Wird nach dem rotate angezeigt*/
                 .card p:hover {
                     flex: 4;
                     background-image: linear-gradient( 135deg, #FFA8A8 10%, #FCFF00 100%);
                 }
-
+                /*same hier*/
                 .card p span {
                     min-width: 14em;
                     padding: .5em;
@@ -105,7 +106,7 @@
                 justify-content: center;
                 align-items: center;
             }
-
+            /*Die Buttons für den question container*/
         .cube {
             color: mediumvioletred;
             cursor: pointer;
@@ -183,9 +184,17 @@
         }
         /*Alle h2 Überschriften*/
         h2 {
-        display: flex;
-        justify-content: center;
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            background-image: linear-gradient(45deg, #f3ec78, #af4261);
+            background-size: 100%;
+            border-radius: 6px 0 6px 0;
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+            margin-left: auto;
+            margin-right: auto;
         }
+        /*Die Überschrift, ka wieso ich die soweit unten stehen habe*/
         h1 {
             margin-left: auto;
             margin-right: auto;
@@ -195,20 +204,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        h2 {
-            width: 50%;
-            background-image: linear-gradient(45deg, #f3ec78, #af4261);
-            background-size: 100%;
-            border-radius: 6px 0 6px 0;
-            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 
-                        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 
-                        0 12.5px 10px rgba(0, 0, 0, 0.06),
-                        0 22.3px 17.9px rgba(0, 0, 0, 0.072), 
-                        0 41.8px 33.4px rgba(0, 0, 0, 0.086), 
-                        0 100px 80px rgba(0, 0, 0, 0.12);
-            margin-left: auto;
-            margin-right: auto;
-        }
+        /*Die links in der Navi, Seite = links*/
         a {
         text-decoration: none;
         color: black;
@@ -237,7 +233,7 @@
     <h2><span class="gradient-text">Datentypen</span></h2>
     <section>
         <picture>
-            <img src="img/datentypen1.jpg" id="datentypen" alt="geht nix" />
+            <img src="img/Datentypen1.jpg" id="datentypen" alt="geht nix" />
         </picture>
         <br />
         <form class="question-container" id="question1">
@@ -273,7 +269,7 @@
     <!-- 2.-->
     <section>
         <picture>
-            <img src="img/datentypen2.jpg" id="datentypen" alt="geht nix" />
+            <img src="img/Datentypen2.jpg" id="datentypen" alt="geht nix" />
         </picture>
         <br />
         <form class="question-container" id="question2">
@@ -309,7 +305,7 @@
     <!-- 3.-->
     <section>
         <picture>
-            <img src="img/datentypen3.jpg" id="datentypen" alt="geht nix" />
+            <img src="img/Datentypen3.jpg" id="datentypen" alt="geht nix" />
         </picture>
         <br />
         <form class="question-container" id="question3">
@@ -345,7 +341,7 @@
     <!-- 4.-->
     <section>
         <picture>
-            <img src="img/datentypen4.jpg" id="datentypen" alt="geht nix" />
+            <img src="img/Datentypen4.jpg" id="datentypen" alt="geht nix" />
         </picture>
         <br />
         <form class="question-container" id="question4">
