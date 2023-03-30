@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="de">
+<meta charset="utf-8">
+<head>
+	<title>BFD FISI 14 Monate QUIZ</title>
+	<meta name="description" content="Diese Seite beinhaltet Lernmaterial für FISI Prüfung">
+	<meta name="keywords" content="fisi, fisi prüfung, FISI Prüfung, fisi 14">
+
+</head>
+<body>
+	<img class="back" src="back.png" width="100%" height="1024 rem">
+	<div class="container">
+
+<img class="ban" src="ban.png" alt="Bannerpic">
+	</div>
+
+
+
+<main id="main">
+	<form id="quiz" action="">
+	</form>
+</main>
+
+<style type="text/css">
+
+	.back{
+		margin: 0;
+		padding: 0;
+		display: flex;
+		position: fixed;
+		z-index: -9999;
+		
+	}
+	.ban{
+		margin: 0;
+		display: flex;
+		position:relative;
+	}
+h2 {
+	background-color: #ffffff;
+	color:rgb(0, 0, 0);
+	border-radius: 5px 5px 5px 5px;
+	border: 2px solid #57e7e0;
+	padding: 1rem !important;
+	position: fixed;
+	top: 10%;
+	left: 40%;
+}
+
+#quiz ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	left: 40%;
+	top:30%;
+}
+
+#quiz li {
+	margin: 0;
+	padding: 0;
+
+}
+
+#quiz label {
+	display: block;
+	background-color: #fffbf0;
+	border: 2px solid #57e7e0;
+	border-radius: 0.2em;
+	margin: 0.1em 0;
+	padding: 1em 2em;
+	text-align: start;
+	max-width: 33em;
+	
+}
+
+#quiz label:hover {
+	background-color: #20b9df;
+}
+
+#quiz input:checked ~ label,
+#quiz input:focus ~ label {
+	background-color: #20a9df;
+	border-color: #00867b;
+}
+
+#quiz input {
+	left: -20%;
+	position: absolute;
+}
+
+#quiz button:not(.startBtn) {
+	display: none;
+}
+
+#quiz button{
+	background-color: #ffffff;
+	display: flex;
+	position: fixed;
+	top: 50%;
+	left: 55%;
+	border-radius: 5px 5px 5px 5px;
+}
+#quiz label {
+	cursor: pointer;
+	
+}
+/* listing with solutions */
+#p{
+	color:#fffbf0;
+	border-radius: 5px 5px 5px 5px;
+}
+p{
+	color:#000000;
+	background-color: rgb(255, 255, 255);
+	width: 50%;
+	border-radius: 5px 5px 5px 5px;
+}
+.question  {
+	color: #000000;
+	background-color: #ffffff;
+	font-weight: bold;
+
+}
+
+.correct {
+	color: #0c0;
+}
+
+.wrong {
+	color: #c00;
+}
+
+.correct:before {
+	content: '✓';
+	color: #0d0;
+}
+
+.wrong:before {
+	content: '✗';
+	color: #f00;
+}
+
+.correct:before,
+.wrong:before {
+	font: 2em bold;
+	padding: 0 0.2em;
+}
+caption{
+	color: #000000;
+	background-color: #ffffff;
+	border-radius: 5px 5px 5px 5px;
+}
+#scores,
+#scores td,
+#scores th {
+	background-color: #ffffff;
+	color: rgb(0, 0, 0);
+	border: 1px solid rgb(255, 255, 255);
+	border-collapse: collapse;
+	text-align: center;
+}
+</style>
+
+<script language="javascript" type="text/javascript">
+<!-- // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from#Polyfill
+// Production steps of ECMA-262, Edition 6, 22.1.2.1
+if (!Array.from) {
+	Array.from = (function () {
+		var toStr = Object.prototype.toString;
+		var isCallable = function (fn) {
+			return typeof fn === 'function' || toStr.call(fn) === '[object Function]';
+		};
+		var toInteger = function (value) {
+			var number = Number(value);
+			if (isNaN(number)) {
+				return 0;
+			}
+			if (number === 0 || !isFinite(number)) {
+				return number;
+			}
+			return (number > 0 ? 1 : -1) * Math.floor(Math.abs(number));
+		};
+		var maxSafeInteger = Math.pow(2, 53) - 1;
+		var toLength = function (value) {
+			var len = toInteger(value);
+			return Math.min(Math.max(len, 0), maxSafeInteger);
+		};
+		// The length property of the from method is 1.
+		return function from(arrayLike /*, mapFn, thisArg */ ) {
+			// 1. Let C be the this value.
+			var C = this;
+			// 2. Let items be ToObject(arrayLike).
+			var items = Object(arrayLike);
+			// 3. ReturnIfAbrupt(items).
+			if (arrayLike == null) {
+				throw new TypeError(
+					"Array.from requires an array-like object - not null or undefined");
+			}
+			// 4. If mapfn is undefined, then let mapping be false.
+			var mapFn = arguments.length > 1 ? arguments[1] : void undefined;
+			var T;
+			if (typeof mapFn !== 'undefined') {
+				// 5. else
+				// 5. a If IsCallable(mapfn) is false, throw a TypeError exception.
+				if (!isCallable(mapFn)) {
+					throw new TypeError(
+						'Array.from: when provided, the second argument must be a function');
+				}
+				// 5. b. If thisArg was supplied, let T be thisArg; else let T be undefined.
+				if (arguments.length > 2) {
+					T = arguments[2];
+				}
+			}
+			// 10. Let lenValue be Get(items, "length").
+			// 11. Let len be ToLength(lenValue).
+			var len = toLength(items.length);
+			// 13. If IsConstructor(C) is true, then
+			// 13. a. Let A be the result of calling the [[Construct]] internal method 
+			// of C with an argument list containing the single item len.
+			// 14. a. Else, Let A be ArrayCreate(len).
+			var A = isCallable(C) ? Object(new C(len)) : new Array(len);
+			// 16. Let k be 0.
+			var k = 0;
+			// 17. Repeat, while k < len… (also steps a - h)
+			var kValue;
+			while (k < len) {
+				kValue = items[k];
+				if (mapFn) {
+					A[k] = typeof T === 'undefined' ? mapFn(kValue, k) : mapFn.call(T,
+						kValue, k);
+				} else {
+					A[k] = kValue;
+				}
+				k += 1;
+			}
+			// 18. Let putStatus be Put(A, "length", len, true).
+			A.length = len;
+			// 20. Return A.
+			return A;
+		};
+	}());
+}
+'use strict';
+var myQuiz = {
+	container: null,
+	// helper function
+	createElement: function (o) {
+		var el, p;
+		if (o && (o.tag || o.tagName)) {
+			el = document.createElement(o.tag || o.tagName);
+			if (o.text || o.txt) {
+				var text = (o.text || o.txt)
+				el.innerHTML = text;
+			}
+			for (p in o) {
+				if (!p.match(/^t(e)?xt|tag(name)?$/i)) {
+					el[p] = o[p];
+				}
+			}
+		}
+		return el;
+	},
+	// user interface for a quiz question
+	createOptions: function () {
+		var t = this,
+			options = [],
+			ul = document.createElement("ul");
+		t.emptyContainer();
+		t.intoContainer(t.createElement({
+			tag: "h2",
+			text: "(" + t.currentQuestion.category + ") " + t.currentQuestion.question
+		}));
+		t.intoContainer(ul);
+		// create options
+		options.push(t.currentQuestion.solution);
+		t.currentQuestion.falses.forEach(function (s) {
+			options.push(s);
+		});
+		t.shuffleArray(options);
+		options.forEach(function (s, i) {
+			var li = document.createElement("li"),
+				label = t.createElement({
+					htmlFor: "a" + t.questions.length + "_" + i,
+					tag: "label",
+					text: s
+				}),
+				radio = t.createElement({
+					id: "a" + t.questions.length + "_" + i,
+					name: "answer",
+					tag: "input",
+					type: "radio",
+					tabindex: "0",
+					value: s
+				});
+			ul.appendChild(li);
+			li.appendChild(radio);
+			li.appendChild(label);
+		});
+		// Hinweis für Tastatur-User
+		t.intoContainer(t.createElement({
+			tag: "button",
+			text: "confirm choice",
+			type: "submit"
+		}));
+	},
+	currentChoices: [],
+	currentQuestion: null,
+	// data could be filled from an external source (JSON)
+	data: [{
+		category: 'MYSQL',
+		question: 'Mit welchem Begriff wählt man in MYSQL Spalten aus?',
+		solution: 'SELECT',
+		falses: ['DROP',
+			'WHERE',
+			'INSERT'],
+		explanation: 'SELECT name FROM <table>'
+	}, {
+		category: 'PC Hardware',
+		question: 'In welchem SLOT auf dem Mainboard, wird eine Grafikkarte "gesteckt"',
+		solution: 'PCI(-E)',
+		falses: ['SATA',
+		        'CPU Sockel',
+		        'Mit nem Stecker auf irgend einen Slot'],
+		explanation: 'Die Grafikkarte wird in einen PCI(-E) SLOT gesteckt.'
+	}, {
+		category: 'MYSQL',
+		question: 'Wählen Sie den richtigen MYSQL code für INSERT aus.',
+		solution:  'INSERT INTO table(column1,column2,column3,column4) VALUES("wert1","wert2","wert3","wert4");',
+		falses: ['INSERT IN table(column1"TEXT",column2"TEXT",column3"TEXT");',
+			'INSERT TEXT INTO table;',
+			'egal, alles gleich gut'],
+		explanation: 'INSERT INTO <table>(column1,column2,.... brauch noch VALUES("wert1","wert2","wert3");'
+	}, {
+		category: 'Datenwerte und Typen',
+		question: 'Was ist ein INTEGER?',
+		solution: 'Ein Datentyp, welcher ganzzählige Werte speichert. Der Wert ist endlich',
+		falses: ['Ein integrierter Wert',
+			'Irgendwas, ich weiß es nicht',
+			],
+		explanation: 'Ein Integer wird in der Informatik ein Datentyp bezeichnet, der ganzzahlige Werte speichert. Der Wertebereich ist endlich'
+	}, {
+		category: 'PC Hardware',
+		question: 'Der Strom fällt aus, welcher Speicher wird gelöscht?', //Frage 5 - sind die Antworten bei wechselnder Reihenfolge noch sinnvoll?
+		solution: 'RAM',
+		falses: [
+			'CPU',
+			'Festplatte',
+			'keiner'],
+		explanation: 'Flüchtiger Speicher wie der RAM wird permanent mit Strom versorgt, sodass die elektrische Ladung aller Speicherzellen bei Bedarf wieder aufgefüllt werden kann. Ein RAM funktioniert so schnell, weil er „undicht“ ist – genau wie ein löchriger Eimer, aus dem ständig Wasser entrinnt.'
+	}, {
+		category: 'PC Hardware',
+		question: 'Wo wird in Hz gemessen?',
+		solution: 'Taktfrequenz von Chipsätzen(CPU,GPU)',
+		falses: ['Schreibgeschwindigkeit der Festplatte',
+			'gar nicht, sowas gibt es nicht'],
+		explanation: 'Die Taktfrequenz misst die Anzahl der Takte oder Zyklen, die z.B von der CPU pro Sekunde durchgeführt werden in GHz (Gigahertz).'
+	}, {
+		category: 'PC Hardware',
+		question: 'In welchem Speicher befindet sich ein laufendes Anwendungsprogramm hauptsächlich?',
+		solution: 'RAM',
+		falses: ['CPU',
+		        'USB',
+		        'HDMI'
+		],
+		explanation: 'RAM (Random Access Memory) ist die Hardware in einem Computergerät, in der das Betriebssystem (OS), die Anwendungsprogramme und die Daten im aktuellen Gebrauch aufbewahrt werden.'
+	}, {
+		category: 'MYSQL',
+		question: 'Mit welchem Befehl löscht ihr eine komplette Datenbank?',
+		solution: 'DROP DATABASE name',
+		falses: ['DELETE DATABASE name',
+			'ALT+F4'
+			],
+		explanation: 'eine Datenbank löscht ihr mit dem Befehl DROP DATABASE datenbankname' //Genau das. IE macht’s falsch. Weiß gar nicht, ob das im Edge korrigiert ist.
+	}, {
+		category: 'Datenwerte und Typen',
+		question: 'Wie viele Bits hat ein Byte?',
+		solution: '8',
+		falses: ['12',
+			'16',
+			'32'],
+		explanation: 'Ein Byte hat 8 Bits.'
+	}, {
+		category: 'PC Hardware',
+		question: 'Zu welcher Gerätegruppe gehören Plotter, Scanner und Mikrofon?',
+		solution: 'Peripheriegeräte', //doppelte backslashes sind Markierung in JS/JSON
+		falses: ['Datentransfergeräte', 
+		'Kommunikationsgeräte', 
+		'Speichergeräte'],
+		explanation: 'Peripheriegeräte dienen der Ein- und Ausgabe von Daten oder Befehlen in die Zentraleinheit. Sie erbringen eine „Dienstleistung“ für den Benutzer.'
+	}, {
+		category: 'Datenwerte und Typen',
+		question: 'Was ist ein FLOAT?',
+		solution: 'Datentyp zum Speichern von Kommazahlen in der Informatik',
+		falses: ['Datentyp zum Speichern von Bildern in der Informatik',
+			'Ein Browser',
+			'Datentyp zum Speichern von ganzen Zahlen in der Informatik'],
+		explanation: 'Float steht für: Gleitkommazahl, Datentyp zum Speichern von Kommazahlen in der Informatik.'
+	}, {
+		category: 'PC Hardware',
+		question: 'Wofür steht die Abkürzung CPU?',
+		solution: 'Central Processing Unit',
+		falses: ['Control Program Unit',
+		'Calculating Process Unit',
+		'Control Process Unit'
+		],
+		explanation: 'Der Prozessor (auch CPU, also Central Processing Unit) genannt, ist das Gehirn des Computers.'
+	}, {
+		category: 'PC Hardware',
+		question: 'Welcher Bestandteil eines PCs führt Berechnungen aus?',
+		solution: 'CPU',
+		falses: ['GPU', 'Festplatte','Der Bildschirm'],
+		explanation: 'Der CPU führt Berechnungen aus.'
+	},
+	{
+    	category: 'MYSQL',
+		question: 'Wie wählst du einen table namens "Persons" aus, wo die column "Firstname" mit einem "A"startet?',
+		solution: 'SELECT * FROM Persons WHERE Firstname LIKE "a%"',
+		falses: ['SELECT ALL FROM Persons WHERE Firstname = "%a" ', 'SELECT * FROM Persons WHERE Firstname LIKE "%a"'],
+		explanation: 'SELECT * FROM Persons WHERE Firstname LIKE "a%"'
+
+    },
+	{
+    category: 'Betriebssysteme',
+    question: 'Welches Betriebssystem wurde von Microsoft entwickelt?',
+    solution: 'Windows',
+    falses: ['macOS', 'Linux', 'Android'],
+    explanation: 'Windows ist ein Betriebssystem, das von Microsoft entwickelt wurde.',
+  },
+  {
+    category: 'Netzwerkgrundlagen',
+    question: 'Welches Protokoll wird verwendet, um Webseiten von einem Webserver abzurufen?',
+    solution: 'HTTP',
+    falses: ['FTP', 'SSH', 'SMTP'],
+    explanation: 'HTTP (Hypertext Transfer Protocol) wird verwendet, um Webseiten von einem Webserver abzurufen.',
+  },
+  {
+    category: 'Virtualisierung',
+    question: 'Welche der folgenden ist eine Open-Source-Plattform für die Containerisierung von Anwendungen?',
+    solution: 'Docker',
+    falses: ['VMware', 'VirtualBox', 'Hyper-V'],
+    explanation: 'Docker ist eine Open-Source-Plattform für die Containerisierung von Anwendungen.',
+  },
+  {
+    category: 'IT-Sicherheit',
+    question: 'Was bedeutet die Abkürzung "VPN" im Kontext der IT-Sicherheit?',
+    solution: 'Virtual Private Network',
+    falses: ['Very Personal Network', 'Virtual Public Network', 'Volatile Packet Notation'],
+    explanation: 'VPN steht für Virtual Private Network, eine Technologie, die eine sichere Verbindung über ein unsicheres Netzwerk ermöglicht.',
+  },
+  {
+    category: 'Projektmanagement',
+    question: 'Welches der folgenden Projektmanagement-Modelle basiert auf iterativen und inkrementellen Entwicklungsprozessen?',
+    solution: 'Agile',
+    falses: ['Wasserfall', 'V-Modell', 'PRINCE2'],
+    explanation: 'Agile Projektmanagement-Modelle basieren auf iterativen und inkrementellen Entwicklungsprozessen.',
+  },
+  {
+  category: 'Programmierung',
+  question: 'Welche der folgenden Sprachen ist eine objektorientierte Programmiersprache?',
+  solution: 'Java',
+  falses: ['HTML', 'SQL', 'CSS'],
+  explanation: 'Java ist eine objektorientierte Programmiersprache, während HTML, SQL und CSS keine objektorientierten Programmiersprachen sind.',
+},
+{
+  category: 'Netzwerktopologien',
+  question: 'Welche Netzwerktopologie beschreibt ein Netzwerk, bei dem jedes Gerät direkt mit jedem anderen Gerät verbunden ist?',
+  solution: 'Vollständig vermascht',
+  falses: ['Stern', 'Ring', 'Bus'],
+  explanation: 'In einer vollständig vermaschten Netzwerktopologie ist jedes Gerät direkt mit jedem anderen Gerät verbunden.',
+},
+{
+  category: 'Speichermedien',
+  question: 'Welches Speichermedium ist bekannt für seine Langlebigkeit und Robustheit gegenüber Umwelteinflüssen?',
+  solution: 'Solid-State-Drive (SSD)',
+  falses: ['Hard Disk Drive (HDD)', 'CD-ROM', 'Diskette'],
+  explanation: 'Solid-State-Drives (SSDs) sind bekannt für ihre Langlebigkeit und Robustheit gegenüber Umwelteinflüssen, da sie keine beweglichen Teile haben.',
+},
+{
+  category: 'IT-Sicherheit',
+  question: 'Welche Art von Angriff zielt darauf ab, den Zugriff auf eine Ressource oder einen Dienst durch Überlastung zu verhindern?',
+  solution: 'Denial-of-Service-Angriff',
+  falses: ['Phishing-Angriff', 'Man-in-the-Middle-Angriff', 'Brute-Force-Angriff'],
+  explanation: 'Ein Denial-of-Service-Angriff (DoS) zielt darauf ab, den Zugriff auf eine Ressource oder einen Dienst durch Überlastung zu verhindern.',
+},
+{
+  category: 'Betriebssysteme',
+  question: 'Welche Funktion bietet das Betriebssystem, um mehrere Anwendungen gleichzeitig auszuführen?',
+  solution: 'Multitasking',
+  falses: ['Multiuser', 'Multiprocessing', 'Multithreading'],
+  explanation: 'Multitasking ist die Fähigkeit eines Betriebssystems, mehrere Anwendungen gleichzeitig auszuführen.',
+},
+{
+  category: 'IPv4 und IPv6',
+  question: 'Wie viele Bits hat eine IPv6-Adresse?',
+  solution: '128',
+  falses: ['32', '64', '256'],
+  explanation: 'Eine IPv6-Adresse besteht aus 128 Bits.',
+},
+{
+  category: 'DNS',
+  question: 'Wofür steht die Abkürzung DNS im Zusammenhang mit Computernetzwerken?',
+  solution: 'Domain Name System',
+  falses: ['Dynamic Name Server', 'Domain Network Service', 'Distributed Network System'],
+  explanation: 'DNS steht für Domain Name System, ein System zur Übersetzung von Domainnamen in IP-Adressen.',
+},
+{
+  category: 'Linux',
+  question: 'Welcher der folgenden Befehle zeigt den Inhalt eines Verzeichnisses in Linux an?',
+  solution: 'ls',
+  falses: ['cd', 'mkdir', 'rm'],
+  explanation: 'Der Befehl "ls" zeigt den Inhalt eines Verzeichnisses in Linux an.',
+},
+{
+  category: 'Firewalls',
+  question: 'Welche Hauptfunktion hat eine Firewall in einem Computernetzwerk?',
+  solution: 'Kontrolle des ein- und ausgehenden Datenverkehrs',
+  falses: ['Beschleunigung der Internetverbindung', 'Verwaltung von IP-Adressen', 'Speicherung von Netzwerkkonfigurationen'],
+  explanation: 'Die Hauptfunktion einer Firewall besteht darin, den ein- und ausgehenden Datenverkehr in einem Computernetzwerk zu kontrollieren und potenziell schädliche Datenpakete zu blockieren.',
+},
+{
+  category: 'Dateisysteme',
+  question: 'Welches der folgenden Dateisysteme wird standardmäßig von Windows-Betriebssystemen verwendet?',
+  solution: 'NTFS',
+  falses: ['FAT32', 'ext4', 'HFS+'],
+  explanation: 'NTFS (New Technology File System) ist das standardmäßig von Windows-Betriebssystemen verwendete Dateisystem.',
+},
+{
+  category: 'Virtualisierung',
+  question: 'Welche Technologie ermöglicht das gleichzeitige Ausführen mehrerer Betriebssysteme auf einem einzigen physischen Computer?',
+  solution: 'Virtualisierung',
+  falses: ['Klonen', 'Bereitstellung', 'Partitionierung'],
+  explanation: 'Virtualisierung ermöglicht das gleichzeitige Ausführen mehrerer Betriebssysteme auf einem einzigen physischen Computer.',
+},
+{
+  category: 'Routing',
+  question: 'Welches Gerät ist hauptsächlich für die Weiterleitung von Datenpaketen zwischen Netzwerken verantwortlich?',
+  solution: 'Router',
+  falses: ['Switch', 'Hub', 'Bridge'],
+  explanation: 'Ein Router ist ein Gerät, das hauptsächlich für die Weiterleitung von Datenpaketen zwischen Netzwerken verantwortlich ist.',
+},
+{
+  category: 'Windows-Betriebssystem',
+  question: 'Welcher Befehl öffnet die Eingabeaufforderung in Windows?',
+  solution: 'cmd',
+  falses: ['terminal', 'console', 'bash'],
+  explanation: 'Der Befehl "cmd" öffnet die Eingabeaufforderung in Windows.',
+},
+{
+  category: 'Active Directory',
+  question: 'In welchem Microsoft-Dienst werden Informationen über Objekte wie Benutzer, Gruppen und Computer in einem Netzwerk zentral gespeichert?',
+  solution: 'Active Directory',
+  falses: ['File Server', 'DNS Server', 'DHCP Server'],
+  explanation: 'Active Directory ist ein Microsoft-Dienst, in dem Informationen über Objekte wie Benutzer, Gruppen und Computer in einem Netzwerk zentral gespeichert werden.',
+},
+{
+  category: 'TCP/IP-Modell',
+  question: 'In welcher Schicht des TCP/IP-Modells sind Protokolle wie HTTP und SMTP angesiedelt?',
+  solution: 'Anwendungsschicht',
+  falses: ['Transportschicht', 'Internetschicht', 'Netzzugangsschicht'],
+  explanation: 'Protokolle wie HTTP und SMTP sind in der Anwendungsschicht des TCP/IP-Modells angesiedelt.',
+},
+{
+  category: 'Backup',
+  question: 'Was ist der Hauptzweck von Datensicherungen (Backups)?',
+  solution: 'Wiederherstellung von Daten nach Datenverlust',
+  falses: ['Beschleunigung der Datenübertragung', 'Erhöhung der Speicherkapazität', 'Optimierung der Netzwerkleistung'],
+  explanation: 'Der Hauptzweck von Datensicherungen ist die Wiederherstellung von Daten nach Datenverlust.',
+},
+{
+  category: 'Programmiersprachen',
+  question: 'Welche der folgenden Sprachen ist eine Skriptsprache, die hauptsächlich für serverseitige Webentwicklung verwendet wird?',
+  solution: 'PHP',
+  falses: ['Java', 'C++', 'Python'],
+  explanation: 'PHP ist eine Skriptsprache, die hauptsächlich für serverseitige Webentwicklung verwendet wird.',
+},
+{
+  category: 'Netzwerkprotokolle',
+  question: 'Wofür steht die Abkürzung FTP im Zusammenhang mit Computernetzwerken?',
+  solution: 'File Transfer Protocol',
+  falses: ['Fast TransmissionProtocol', 'File Tracing Protocol', 'File Transfer Port'],
+explanation: 'FTP steht für File Transfer Protocol, ein Standardnetzwerkprotokoll, das zum Übertragen von Dateien von einem Host zu einem anderen über ein TCP-basiertes Netzwerk verwendet wird, wie z.B. das Internet.',
+},
+{
+category: 'Cybersicherheit',
+question: 'Was ist ein DDoS-Angriff?',
+solution: 'Distributed Denial of Service',
+falses: ['Data Destruction Operation', 'Disk Drive Overwrite Service', 'Direct Data Offloading System'],
+explanation: 'Ein DDoS-Angriff (Distributed Denial of Service) ist ein Angriff, bei dem mehrere Systeme ein Ziel, wie eine Website oder einen Server, mit einer Flut von Internetverkehr überlasten, um es lahmzulegen.',
+},
+{
+category: 'Linux-Betriebssystem',
+question: 'Welcher Befehl zeigt in Linux die Verzeichnisstruktur in einer Baumansicht an?',
+solution: 'tree',
+falses: ['ls', 'dir', 'find'],
+explanation: 'Der "tree"-Befehl zeigt die Verzeichnisstruktur in einer Baumansicht an.',
+},
+{
+category: 'Verschlüsselung',
+question: 'Welcher Algorithmus wurde als Standard für symmetrische Verschlüsselung vom US-amerikanischen National Institute of Standards and Technology (NIST) ausgewählt?',
+solution: 'AES',
+falses: ['DES', 'RSA', 'Blowfish'],
+explanation: 'Der Advanced Encryption Standard (AES) wurde als Standard für symmetrische Verschlüsselung vom US-amerikanischen National Institute of Standards and Technology (NIST) ausgewählt.',
+},
+{
+category: 'Programmiersprachen',
+question: 'Welche Programmiersprache wurde von Guido van Rossum entwickelt?',
+solution: 'Python',
+falses: ['Java', 'Ruby', 'JavaScript'],
+explanation: 'Python wurde von Guido van Rossum entwickelt.',
+},
+{
+category: 'Drahtlose Kommunikation',
+question: 'Welche Technologie ermöglicht die Kommunikation über kurze Distanzen (normalerweise weniger als 10 Meter) zwischen Geräten wie Smartphones, Tablets und Computern?',
+solution: 'Bluetooth',
+falses: ['Wi-Fi', 'NFC', 'ZigBee'],
+explanation: 'Bluetooth ermöglicht die Kommunikation über kurze Distanzen (normalerweise weniger als 10 Meter) zwischen Geräten wie Smartphones, Tablets und Computern.',
+},
+{
+category: 'Netzwerktopologien',
+question: 'In welcher Netzwerktopologie sind alle Geräte direkt miteinander verbunden?',
+solution: 'Vollständig vermascht',
+falses: ['Stern', 'Ring', 'Bus'],
+explanation: 'In einer vollständig vermaschten Netzwerktopologie sind alle Geräte direkt miteinander verbunden.',
+},
+{
+category: 'Software-Entwicklung',
+question: 'Wofür steht die Abkürzung IDE im Zusammenhang mit der Programmierung?',
+solution: 'Integrated Development Environment',
+falses: ['Intelligent Design Editor', 'Internal Development Engine', 'Interconnected Data Exchange'],
+explanation: 'IDE steht für Integrated Development Environment, eine Softwareanwendung, die Programmierern umfassende Funktionen zum Entwickeln von Software bietet.',
+},
+{
+  category: 'Webentwicklung',
+  question: 'Welches Format wird üblicherweise verwendet, um Daten zwischen einem Webserver und einem Browser auszutauschen?',
+  solution: 'JSON',
+  falses: ['XML', 'CSV', 'YAML'],
+  explanation: 'JSON (JavaScript Object Notation) ist ein leichtgewichtiges Daten-Austauschformat, das üblicherweise verwendet wird, um Daten zwischen einem Webserver und einem Browser auszutauschen.',
+},
+{
+  category: 'Betriebssysteme',
+  question: 'Welches Betriebssystem wurde von Linus Torvalds entwickelt?',
+  solution: 'Linux',
+  falses: ['Windows', 'macOS', 'FreeBSD'],
+  explanation: 'Linux wurde von Linus Torvalds entwickelt.',
+},
+{
+  category: 'Datenbanken',
+  question: 'Wofür steht die Abkürzung SQL?',
+  solution: 'Structured Query Language',
+  falses: ['Sequential Query Language', 'Simple Query Language', 'System Query Language'],
+  explanation: 'SQL steht für Structured Query Language, eine standardisierte Programmiersprache, die zum Verwalten von relationalen Datenbanken und zum Durchführen von Operationen auf den darin enthaltenen Daten verwendet wird.',
+},
+{
+  category: 'Cloud-Computing',
+  question: 'Welcher Cloud-Computing-Dienst bietet Computerressourcen in Form von virtuellen Maschinen an?',
+  solution: 'IaaS (Infrastructure as a Service)',
+  falses: ['PaaS (Platform as a Service)', 'SaaS (Software as a Service)', 'FaaS (Function as a Service)'],
+  explanation: 'IaaS (Infrastructure as a Service) bietet Computerressourcen in Form von virtuellen Maschinen an.',
+},
+{
+  category: 'Programmiersprachen',
+  question: 'Welche der folgenden Programmiersprachen ist objektorientiert und wurde ursprünglich von Sun Microsystems entwickelt?',
+  solution: 'Java',
+  falses: ['C', 'Perl', 'PHP'],
+  explanation: 'Java ist eine objektorientierte Programmiersprache, die ursprünglich von Sun Microsystems entwickelt wurde.',
+},
+{
+  category: 'Verschlüsselung',
+  question: 'Welcher Verschlüsselungsstandard wird üblicherweise verwendet, um sichere Kommunikation über das Internet zu gewährleisten?',
+  solution: 'TLS (Transport Layer Security)',
+  falses: ['RSA', 'DES', 'SHA'],
+  explanation: 'TLS (Transport Layer Security) ist ein Verschlüsselungsstandard, der üblicherweise verwendet wird, um sichere Kommunikation über das Internet zu gewährleisten.',
+},
+{
+  category: 'Software-Lizenzierung',
+  question: 'Was ist eine Open-Source-Software?',
+  solution: 'Software, deren Quellcode öffentlich zugänglich ist und von jedem bearbeitet und verbessert werden kann',
+  falses: ['Software, die kostenlos ist', 'Software, die nur für den persönlichen Gebrauch lizenziert ist', 'Software, die auf allen Plattformen verfügbar ist'],
+  explanation: 'Open-Source-Software ist Software, deren Quellcode öffentlich zugänglich ist und von jedem bearbeitet und verbessert werden kann.',
+},
+{
+  category: 'Netzwerkgrundlagen',
+  question: 'Welche Netzwerkadresse wird verwendet, um das eigene Gerät in einem IP-Netzwerk zu bezeichnen?',
+solution: '127.0.0.1',
+falses: ['192.168.0.1', '255.255.255.255', '0.0.0.0'],
+explanation: 'Die Netzwerkadresse 127.0.0.1 wird verwendet, um das eigene Gerät in einem IP-Netzwerk zu bezeichnen. Diese Adresse wird auch als "localhost" bezeichnet.',
+},
+{
+category: 'Internet',
+question: 'Wofür steht die Abkürzung URL?',
+solution: 'Uniform Resource Locator',
+falses: ['Universal Resource Link', 'Unified Resource Language', 'Unique Resource Location'],
+explanation: 'URL steht für Uniform Resource Locator, ein Referenzsystem, das verwendet wird, um auf Ressourcen im Internet zu verweisen.',
+},
+{
+category: 'Hardware',
+question: 'Welcher Teil eines Computers ist hauptsächlich für die temporäre Speicherung von Daten verantwortlich, während ein Programm ausgeführt wird?',
+solution: 'Arbeitsspeicher (RAM)',
+falses: ['Festplatte', 'Prozessor', 'Grafikkarte'],
+explanation: 'Der Arbeitsspeicher (RAM) ist der Teil eines Computers, der hauptsächlich für die temporäre Speicherung von Daten verantwortlich ist, während ein Programm ausgeführt wird.',
+},
+{
+category: 'Software',
+question: 'Welche Art von Software wird verwendet, um Malware, Viren und andere schädliche Software von einem Computer zu entfernen oder zu verhindern?',
+solution: 'Antivirenprogramm',
+falses: ['Texteditor', 'Betriebssystem', 'Webbrowser'],
+explanation: 'Antivirenprogramme werden verwendet, um Malware, Viren und andere schädliche Software von einem Computer zu entfernen oder zu verhindern.',
+},
+{
+category: 'Netzwerke',
+question: 'Welches Protokoll ist für die Zuweisung von IP-Adressen an Geräte in einem Netzwerk verantwortlich?',
+solution: 'DHCP (Dynamic Host Configuration Protocol)',
+falses: ['DNS (Domain Name System)', 'FTP (File Transfer Protocol)', 'SMTP (Simple Mail Transfer Protocol)'],
+explanation: 'DHCP (Dynamic Host Configuration Protocol) ist ein Netzwerkprotokoll, das für die Zuweisung von IP-Adressen an Geräte in einem Netzwerk verantwortlich ist.',
+},
+{
+category: 'Webbrowser',
+question: 'Welches Protokoll wird üblicherweise verwendet, um Webseiten von einem Webserver an einen Browser zu übertragen?',
+solution: 'HTTP (Hypertext Transfer Protocol)',
+falses: ['FTP (File Transfer Protocol)', 'TCP (Transmission Control Protocol)', 'DNS (Domain Name System)'],
+explanation: 'HTTP (Hypertext Transfer Protocol) ist das Protokoll, das üblicherweise verwendet wird, um Webseiten von einem Webserver an einen Browser zu übertragen.',
+},
+{
+category: 'E-Mail',
+question: 'Welches Protokoll wird üblicherweise verwendet, um E-Mails von einem E-Mail-Server an einen E-Mail-Client zu übertragen?',
+solution: 'IMAP (Internet Message Access Protocol)',
+falses: ['SMTP (Simple Mail Transfer Protocol)', 'POP3 (Post Office Protocol 3)', 'HTTP (Hypertext Transfer Protocol)'],
+explanation: 'IMAP (Internet Message Access Protocol) ist ein Protokoll, dasüblicherweise verwendet wird, um E-Mails von einem E-Mail-Server an einen E-Mail-Client zu übertragen.',
+
+},
+{
+category: 'Computergrafik',
+question: 'Welche Dateierweiterung ist typisch für ein unkomprimiertes Rasterbildformat?',
+solution: '.bmp',
+falses: ['.jpeg', '.png', '.gif'],
+explanation: '.bmp ist die Dateierweiterung für das unkomprimierte Rasterbildformat Bitmap.',
+},
+{
+category: 'Programmierung',
+question: 'Wofür steht die Abkürzung API im Zusammenhang mit der Softwareentwicklung?',
+solution: 'Application Programming Interface',
+falses: ['Advanced Programming Integration', 'Application Process Information', 'Automated Programming Interface'],
+explanation: 'API steht für Application Programming Interface, eine Schnittstelle, die es Softwareanwendungen ermöglicht, Funktionen von anderen Anwendungen oder Diensten zu nutzen.',
+},
+{
+category: 'Netzwerksicherheit',
+question: 'Was ist ein VPN?',
+solution: 'Virtual Private Network',
+falses: ['Virtual Public Network', 'Visible Private Network', 'Virtualized Physical Network'],
+explanation: 'Ein VPN (Virtual Private Network) ist eine Technologie, die eine sichere Verbindung über ein unsicheres Netzwerk, wie das Internet, ermöglicht, indem sie Daten verschlüsselt und den Datenverkehr über einen VPN-Server leitet.',
+},
+{
+category: 'Betriebssysteme',
+question: 'In welchem Verzeichnis werden unter Linux üblicherweise Programme und Befehle gespeichert?',
+solution: '/usr/bin',
+falses: ['/etc', '/home', '/var'],
+explanation: 'Unter Linux werden Programme und Befehle üblicherweise im Verzeichnis /usr/bin gespeichert.',
+},
+{
+category: 'Webdesign',
+question: 'Welche Sprache wird hauptsächlich verwendet, um das Aussehen und die Formatierung von Webseiten zu gestalten?',
+solution: 'CSS (Cascading Style Sheets)',
+falses: ['HTML (Hypertext Markup Language)', 'JavaScript', 'PHP (Hypertext Preprocessor)'],
+explanation: 'CSS (Cascading Style Sheets) ist die Sprache, die hauptsächlich verwendet wird, um das Aussehen und die Formatierung von Webseiten zu gestalten.',
+},
+], 
+	emptyContainer: function () {
+		var t = this;
+		while (t.container.firstChild) {
+			t.container.removeChild(t.container.firstChild);
+		}
+	},
+	handleInput: function () {
+		var t = this, // t points to myQuiz
+			// create real array so we can use forEach
+			inputs = Array.from(t.container.getElementsByTagName("input")),
+			selectedSolution = "";
+		// determine selection
+		inputs.forEach(function (o) {
+			if (o.checked) {
+				selectedSolution = o.value;
+			}
+		});
+		// process selected answer
+		if (selectedSolution && t.currentQuestion) {
+			t.currentChoices.push({
+				a: selectedSolution,
+				q: t.currentQuestion
+			});
+			t.play();
+		}
+		// accept start button
+		if (!t.currentQuestion) {
+			t.play();
+		}
+	},
+	init: function () {
+		var t = this;
+		// here goes any code for loading data from an external source
+		t.container = document.getElementById("quiz");
+		if (t.data.length && t.container) {
+			// use anonymous functions so in handleInput
+			// "this" can point to myQuiz
+			t.container.addEventListener("submit", function (ev) {
+				t.handleInput();
+				ev.stopPropagation();
+				ev.preventDefault();
+				return false;
+			});
+			t.container.addEventListener("mouseup", function (ev) {
+				// we want to only support clicks on start buttons...
+				var go = ev.target.tagName.match(/^button$/i);
+				// ... and labels for radio buttons when in a game
+				if (ev.target.tagName.match(/^label$/i) && t.currentQuestion) {
+					go = true;
+				}
+				if (go) {
+					window.setTimeout(function () {
+						t.handleInput();
+					}, 50);
+					ev.stopPropagation();
+					ev.preventDefault();
+					return false;
+				}
+			});
+			t.start();
+		}
+	},
+	intoContainer: function (el, parentType) {
+		var t = this,
+			parent;
+		if (!el) {
+			return;
+		}
+		if (parentType) {
+			parent = document.createElement(parentType);
+			parent.appendChild(el);
+		} else {
+			parent = el;
+		}
+		t.container.appendChild(parent);
+		return parent;
+	},
+	// ask next question or end quiz if none are left
+	play: function () {
+		var t = this,
+			ol;
+		// game over?
+		if (!t.questions.length) {
+			t.showResults();
+			// offer restart
+			window.setTimeout(function () {
+				t.start();
+			}, 50);
+			return;
+		}
+		t.currentQuestion = t.questions.shift();
+		t.createOptions();
+	},
+	// list with remaining quiz question objects
+	questions: [],
+	// list original questions and given answers and elaborate on solutions
+	showResults: function () {
+		var cat, ol, s, scores = {},
+			t = this,
+			tab, thead, tbody, tr;
+		t.emptyContainer();
+		// show message
+		t.intoContainer(t.createElement({
+			tag: "p",
+			text: "Sie haben alle Fragen des Quiz beantwortet. Hier die Auswertung Ihrer Antworten:"
+		}));
+		// list questions and given answers
+		ol = t.intoContainer(t.createElement({
+			id: "result",
+			tag: "ol"
+		}));
+		t.currentChoices.forEach(function (o) {
+			var p, li = ol.appendChild(t.createElement({
+				tag: "li"
+			}));
+			// list original question
+			li.appendChild(t.createElement({
+				className: "question",
+				tag: "p",
+				text: "(" + o.q.category + ") " + o.q.question
+			}));
+			// list given answer
+			p = li.appendChild(t.createElement({
+				tag: "p",
+				text: "Ihre Antwort: "
+			}));
+			p.appendChild(t.createElement({
+				className: (o.q.solution == o.a ? "correct" : "wrong"),
+				tag: "em",
+				text: o.a
+			}));
+			// wrong answer?
+			if (o.q.solution != o.a) {
+				p = li.appendChild(t.createElement({
+					tag: "p",
+					text: "Die richtige Antwort wäre gewesen: "
+				}));
+				p.appendChild(t.createElement({
+					tag: "em",
+					text: o.q.solution
+				}));
+			}
+			// elaborate on solution?
+			if (o.q.explanation) {
+				p = li.appendChild(t.createElement({
+					tag: "p",
+					text: "Erläuterung: "
+				}));
+				p.appendChild(t.createElement({
+					tag: "em",
+					text: o.q.explanation
+				}));
+			}
+		});
+		// display a kind of percentual score over the categories
+		cat = [];
+		t.currentChoices.forEach(function (o) {
+			if (!cat.includes(o.q.category)) {
+				cat.push(o.q.category);
+			}
+		});
+		cat.sort();
+		cat.forEach(function (c) {
+			var correct = 0,
+				num = 0;
+			t.currentChoices.forEach(function (o) {
+				if (o.q.category == c) {
+					num++;
+					if (o.q.solution == o.a) {
+						correct++;
+					}
+				}
+			});
+			scores[c] = Math.floor(100 * correct / num) + "%";
+		});
+		tab = t.intoContainer(t.createElement({
+			id: "scores",
+			tag: "table"
+		}));
+		tab.appendChild(t.createElement({
+			tag: "caption",
+			text: "Übersicht nach Kategorien"
+		}))
+		thead = tab.appendChild(t.createElement({
+			tag: "thead"
+		}))
+		tr = thead.appendChild(t.createElement({
+			tag: "tr"
+		}))
+		for (s in scores) {
+			tr.appendChild(t.createElement({
+				tag: "th",
+				text: s
+			}));
+		}
+		tbody = tab.appendChild(t.createElement({
+			tag: "tbody"
+		}))
+		tr = tbody.appendChild(t.createElement({
+			tag: "tr"
+		}))
+		for (s in scores) {
+			tr.appendChild(t.createElement({
+				tag: "td",
+				text: scores[s]
+			}));
+		}
+		// show message
+		t.intoContainer(t.createElement({
+			tag: "p",
+			text: "Möchten Sie das Quiz erneut starten?"
+		}));
+	},
+	// helper function: shuffle array (adapted from http://javascript.jstruebig.de/javascript/69)
+	shuffleArray: function (a) {
+		var i = a.length;
+		while (i >= 2) {
+			var zi = Math.floor(Math.random() * i);
+			var t = a[zi];
+			a[zi] = a[--i];
+			a[i] = t;
+		}
+		// no return argument since the array has been
+		// handed over as a reference and not a copy!
+	},
+	// start quiz with a start button
+	start: function () {
+		var t = this;
+		// fill list of remaining quiz questions
+		t.questions = [];
+		t.data.forEach(function (o) {
+			t.questions.push(o);
+		});
+		t.shuffleArray(t.questions);
+		t.currentChoices = [];
+		t.currentQuestion = null;
+		// install start button
+		t.intoContainer(t.createElement({
+			className: "startBtn",
+			tag: "button",
+			text: "Quiz starten"
+		}), "p");
+	}
+};
+document.addEventListener("DOMContentLoaded", function () {
+	myQuiz.init();
+});
+-->
+</script> 
